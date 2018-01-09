@@ -6,7 +6,6 @@ echo   ALExorON (c), 07.01.2018
 echo  -----------------------------------------------------------------------------------------
 echo .
 SET dest=%SystemRoot%\System32\config\RegBack\
-SET par= /y
 SET t=timeout /T 10
 SET e=echo ...
 
@@ -23,15 +22,15 @@ goto L%param%
 :::::::::::::::::::::::::::::::::::::::::::::
 :L1
 echo ................................
-echo Current hive: HKEY_CLASSES_ROOT & REG EXPORT HKEY_CLASSES_ROOT %dest%HCR%par%
+echo Current hive: HKEY_CLASSES_ROOT & REG EXPORT HKEY_CLASSES_ROOT %dest%HCR /y
 %e%
-echo Current hive: HKEY_CURRENT_USER & REG EXPORT HKEY_CURRENT_USER %dest%HCU%par%
+echo Current hive: HKEY_CURRENT_USER & REG EXPORT HKEY_CURRENT_USER %dest%HCU /y
 %e%
-echo Current hive: HKEY_LOCAL_MACHINE & REG EXPORT HKEY_LOCAL_MACHINE %dest%HLM%par%
+echo Current hive: HKEY_LOCAL_MACHINE & REG EXPORT HKEY_LOCAL_MACHINE %dest%HLM /y
 %e%
-echo Current hive: HKEY_USERS & REG EXPORT HKEY_USERS %dest%HU%par%
+echo Current hive: HKEY_USERS & REG EXPORT HKEY_USERS %dest%HU /y
 %e%
-echo Current hive: HKEY_USERS & REG EXPORT HKEY_CURRENT_CONFIG %dest%HCC%par%
+echo Current hive: HKEY_USERS & REG EXPORT HKEY_CURRENT_CONFIG %dest%HCC /y
 %e%
 echo All hives succesfully backuped into: %dest%
 echo .
