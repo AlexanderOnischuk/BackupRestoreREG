@@ -1,9 +1,10 @@
 @echo off
 TITLE Console for Backup/Restore registry & COLOR 0A
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-:: BackupRestoreREG.bat - batch script with menu for BACKUPING/RESTORING all registry hives
-:: ALExorON (c), 07.01.2018 ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+echo  -----------------------------------------------------------------------------------------
+echo   BackupRestoreREG.bat - batch script with menu for BACKUPING/RESTORING all registry hives
+echo   ALExorON (c), 07.01.2018
+echo  -----------------------------------------------------------------------------------------
+echo .
 SET dest=%SystemRoot%\System32\config\RegBack\
 SET par= /y
 SET t=timeout /T 10
@@ -14,13 +15,13 @@ echo .............................
 echo Enter 1 for BACKUP registry
 echo Enter 2 for RESTORE registry
 set /p "param=Enter number: "
-goto l%param% 
+goto L%param% 
 
 
 :::::::::::::::::::::::::::::::::::::::::::::
 :: LABEL1 - jump to backuping registry hives
 :::::::::::::::::::::::::::::::::::::::::::::
-:l1
+:L1
 echo ................................
 echo Current hive: HKEY_CLASSES_ROOT & REG EXPORT HKEY_CLASSES_ROOT %dest%HCR%par%
 %e%
@@ -42,7 +43,7 @@ goto :EOF
 :::::::::::::::::::::::::::::::::::::::::::::
 :: LABEL2 - jump to restoring registry hives
 :::::::::::::::::::::::::::::::::::::::::::::
-:l2
+:L2
 echo -------------------------------------------------------------
 echo If this function in runned system not working,
 echo You need use command in offline-system: reg import [path]FILE
