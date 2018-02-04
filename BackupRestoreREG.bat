@@ -1,10 +1,10 @@
 @echo off
 TITLE Console for Backup/Restore registry & COLOR 0A
-echo  -----------------------------------------------------------------------------------------
-echo   BackupRestoreREG.bat - batch script with menu for BACKUPING/RESTORING all registry hives
-echo   ALExorON (c), 07.01.2018
-echo  -----------------------------------------------------------------------------------------
-echo .
+echo -----------------------------------------------------------------------------------------
+echo  BackupRestoreREG.bat - batch script with menu for BACKUPING/RESTORING all registry hives
+echo  ALExorON (c), 07.01.2018
+echo -----------------------------------------------------------------------------------------
+echo .............................
 SET dest=%SystemRoot%\System32\config\RegBack\
 SET t=timeout /T 10
 SET e=echo ...
@@ -22,15 +22,15 @@ goto L%param%
 :::::::::::::::::::::::::::::::::::::::::::::
 :L1
 echo ................................
-echo Current hive: HKEY_CLASSES_ROOT & REG EXPORT HKEY_CLASSES_ROOT %dest%HCR /y
+echo Current hive: HKEY_CLASSES_ROOT & REG EXPORT HKEY_CLASSES_ROOT %dest%HCR.reg /y
 %e%
-echo Current hive: HKEY_CURRENT_USER & REG EXPORT HKEY_CURRENT_USER %dest%HCU /y
+echo Current hive: HKEY_CURRENT_USER & REG EXPORT HKEY_CURRENT_USER %dest%HCU.reg /y
 %e%
-echo Current hive: HKEY_LOCAL_MACHINE & REG EXPORT HKEY_LOCAL_MACHINE %dest%HLM /y
+echo Current hive: HKEY_LOCAL_MACHINE & REG EXPORT HKEY_LOCAL_MACHINE %dest%HLM.reg /y
 %e%
-echo Current hive: HKEY_USERS & REG EXPORT HKEY_USERS %dest%HU /y
+echo Current hive: HKEY_USERS & REG EXPORT HKEY_USERS %dest%HU.reg /y
 %e%
-echo Current hive: HKEY_USERS & REG EXPORT HKEY_CURRENT_CONFIG %dest%HCC /y
+echo Current hive: HKEY_USERS & REG EXPORT HKEY_CURRENT_CONFIG %dest%HCC.reg /y
 %e%
 echo All hives succesfully backuped into: %dest%
 echo .
